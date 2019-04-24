@@ -2,7 +2,7 @@ window.onload = () => {
   chrome.tabs.executeScript(
     {
       code:
-        'const body = document.querySelector("body");const html = document.querySelector("html");body.style.color = "black";html.style.color = "black";'
+        'const body = document.querySelector("body");const el = document.getElementsByClassName("st");console.log(el);if(window.location.protocol == "http:" || "http:") {body.style.color = "black";for(let i = 0; i < el.length; i++){el[i].style.color = "black";}}'
     },
     () => {
       document.querySelector('body').innerHTML =
